@@ -1,6 +1,28 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+public interface SimpleList<T> extends Iterable<T> {
+    public boolean add(T newElement);
+
+    public void add(int index, T element);
+
+    public T get(int index);
+
+    public Iterator<T> iterator();
+
+    public boolean contains(Object hasElement);
+
+    public int size();
+
+    public boolean isEmpty();
+
+    public T set(int index, T newElement);
+
+    public boolean remove(Object o);
+
+    public T remove(int index);
+}
+
 public class SimpleArrayList<E> implements SimpleList<E> {
     private static final int DEFAUL_INITIAL_CAPACITY = 16;
     private E[] data;
